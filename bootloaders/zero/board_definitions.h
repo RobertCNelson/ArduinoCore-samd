@@ -39,6 +39,8 @@
   #include "board_definitions_arduino_mkrnb1500.h"
 #elif defined(BOARD_ID_arduino_nano_33_iot)
   #include "board_definitions_arduino_nano_33_iot.h"
+#elif defined(BOARD_ID_sam_iot)
+  #include "board_definitions_sam_iot.h"
 #else
   #error You must define a BOARD_ID and add the corresponding definitions in board_definitions.h
 #endif

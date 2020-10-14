@@ -57,8 +57,8 @@ SIZE=$(ARM_GCC_PATH)size
 
 # -----------------------------------------------------------------------------
 # Boards definitions
-BOARD_ID?=arduino_zero
-NAME?=samd21_sam_ba
+BOARD_ID?=sam_iot
+NAME?=samd21_sam_ba_sam_iot
 
 # -----------------------------------------------------------------------------
 # Compiler options

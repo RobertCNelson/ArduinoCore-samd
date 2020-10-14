@@ -25,7 +25,7 @@
 #define SAM_BA_VERSION              "2.0"
 
 #if !defined(SAM_BA_BOTH_INTERFACES) &&  !defined(SAM_BA_UART_ONLY) && !defined(SAM_BA_USBCDC_ONLY)
-#define SAM_BA_BOTH_INTERFACES
+#define SAM_BA_UART_ONLY
 #endif
 
 /* Selects USB as the communication interface of the monitor */
