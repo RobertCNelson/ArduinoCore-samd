@@ -41,7 +41,7 @@
  * If BOOT_LOAD_PIN is defined the bootloader is started if the selected
  * pin is tied LOW.
  */
-//#define BOOT_LOAD_PIN                     PIN_PA21
+#define BOOT_LOAD_PIN                     PIN_PA00
 //#define BOOT_LOAD_PIN                     PIN_PA15
 
 #define BOOT_USART_MODULE                 SERCOM5
