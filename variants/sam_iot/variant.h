@@ -42,8 +42,7 @@
 extern "C" unsigned int PINCOUNT_fn();
 #endif
 #define PINS_COUNT           (PINCOUNT_fn())
-//#define NUM_DIGITAL_PINS     (22u)
-#define NUM_DIGITAL_PINS     (16u)
+#define NUM_DIGITAL_PINS     (18u)
 #define NUM_ANALOG_INPUTS    (2u)
 #define NUM_ANALOG_OUTPUTS   (1u)
 #define analogInputToDigitalPin(p)  ((p < 7u) ? (p) + 15u : -1)
@@ -89,10 +88,10 @@ static const uint8_t DAC0 = PIN_DAC0;
 #define SPI_INTERFACES_COUNT 2
 
 // SPI
-#define PIN_SPI_MOSI  (2u)
-#define PIN_SPI_SCK   (3u)
-#define PIN_SPI_SS    (4u)
-#define PIN_SPI_MISO  (5u)
+#define PIN_SPI_MOSI  (4u)
+#define PIN_SPI_SCK   (5u)
+#define PIN_SPI_SS    (6u)
+#define PIN_SPI_MISO  (7u)
 #define PERIPH_SPI    sercom0
 #define PAD_SPI_TX    SPI_PAD_0_SCK_1
 #define PAD_SPI_RX    SERCOM_RX_PAD_3
@@ -102,10 +101,10 @@ static const uint8_t MISO = PIN_SPI_MISO;
 static const uint8_t SCK  = PIN_SPI_SCK;
 
 // SPI1: Connected to WINC1501B
-#define PIN_SPI1_MOSI (6u)
-#define PIN_SPI1_SCK  (7u)
-#define PIN_SPI1_SS   (8u)
-#define PIN_SPI1_MISO (9u)
+#define PIN_SPI1_MOSI (8u)
+#define PIN_SPI1_SCK  (9u)
+#define PIN_SPI1_SS   (10u)
+#define PIN_SPI1_MISO (11u)
 #define PERIPH_SPI1   sercom4
 #define PAD_SPI1_TX   SPI_PAD_0_SCK_1
 #define PAD_SPI1_RX   SERCOM_RX_PAD_3
@@ -116,15 +115,16 @@ static const uint8_t SCK1  = PIN_SPI1_SCK;
 
 // Wire Interfaces
 // ---------------
-//#define WIRE_INTERFACES_COUNT 1
+#define WIRE_INTERFACES_COUNT 1
 
 // Wire
-//#define PIN_WIRE_SDA        (11u)
-//#define PIN_WIRE_SCL        (12u)
-//#define PERIPH_WIRE         sercom2
-//#define WIRE_IT_HANDLER     SERCOM2_Handler
-//static const uint8_t SDA = PIN_WIRE_SDA;
-//static const uint8_t SCL = PIN_WIRE_SCL;
+#define PIN_WIRE_SDA        (2u)
+#define PIN_WIRE_SCL        (3u)
+#define PERIPH_WIRE         sercom3
+#define WIRE_IT_HANDLER     SERCOM3_Handler
+
+static const uint8_t SDA = PIN_WIRE_SDA;
+static const uint8_t SCL = PIN_WIRE_SCL;
 
 // USB
 // ---
@@ -144,9 +144,9 @@ static const uint8_t SCK1  = PIN_SPI1_SCK;
 
 // Needed for WINC1501B (WiFi101) library
 // --------------------------------------
-#define WINC1501_RESET_PIN   (10u)
-#define WINC1501_CHIP_EN_PIN (11u)
-#define WINC1501_INTN_PIN    (13u)
+#define WINC1501_RESET_PIN   (12u)
+#define WINC1501_CHIP_EN_PIN (13u)
+#define WINC1501_INTN_PIN    (15u)
 #define WINC1501_SPI         SPI1
 #define WINC1501_SPI_CS_PIN  PIN_SPI1_SS
 
@@ -170,8 +170,8 @@ extern SERCOM sercom5;
 
 // Serial
 extern Uart Serial;
-#define PIN_SERIAL_RX (14ul)
-#define PIN_SERIAL_TX (15ul)
+#define PIN_SERIAL_RX (16ul)
+#define PIN_SERIAL_TX (17ul)
 #define PAD_SERIAL_TX (UART_TX_PAD_0)
 #define PAD_SERIAL_RX (SERCOM_RX_PAD_1)
 #endif // __cplusplus
