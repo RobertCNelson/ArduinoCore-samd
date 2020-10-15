@@ -208,6 +208,35 @@ nano_33_iot.build.pid=0x8057
 nano_33_iot.bootloader.tool=openocd
 nano_33_iot.bootloader.file=nano_33_iot/samd21_sam_ba_arduino_nano_33_iot.bin
 
+# SAM IoT
+# --------------------
+sam_iot.name=SAM IOT
+sam_iot.vid.0=0x2341
+sam_iot.pid.0=0x8058
+sam_iot.vid.1=0x2341
+sam_iot.pid.1=0x0058
+
+sam_iot.debug.tool=gdb-openocd
+sam_iot.upload.tool=bossac
+sam_iot.upload.protocol=sam-ba
+sam_iot.upload.maximum_size=262144
+sam_iot.upload.maximum_data_size=32768
+sam_iot.upload.use_1200bps_touch=true
+sam_iot.upload.wait_for_upload_port=true
+sam_iot.upload.native_usb=true
+sam_iot.build.mcu=cortex-m0plus
+sam_iot.build.f_cpu=48000000L
+sam_iot.build.usb_product="SAM IOT"
+sam_iot.build.usb_manufacturer="Arduino LLC"
+sam_iot.build.board=SAMD_SAM_IOT
+sam_iot.build.core=arduino
+sam_iot.build.extra_flags=-DCRYSTALLESS -D__SAMD21G18A__ {build.usb_flags}
+sam_iot.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+sam_iot.build.openocdscript=openocd_scripts/arduino_zero.cfg
+sam_iot.build.variant=sam_iot
+sam_iot.build.vid=0x2341
+sam_iot.build.pid=0x0058
+
 # Arduino MKR FOX 1200
 # --------------------
 mkrfox1200.name=Arduino MKR FOX 1200
